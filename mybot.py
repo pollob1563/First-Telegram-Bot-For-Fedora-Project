@@ -1,3 +1,5 @@
+#bot commands '/start','/pi'
+#bot questions 'Hi','How are you?','Fine','Who are you?','What is bot?','Who makes you?','Bye'
 from telegram.ext import Updater
 updater = Updater(token='<token>', use_context=True)
 
