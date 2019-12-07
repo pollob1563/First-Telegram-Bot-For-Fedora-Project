@@ -1,7 +1,7 @@
 #bot commands '/start','/pi'
 #bot questions 'Hi','How are you?','Fine','Who are you?','What is bot?','Who makes you?','Bye'
 from telegram.ext import Updater
-updater = Updater(token='<token>', use_context=True)
+updater = Updater(token='994234344:AAGhFXvdPEkSGZB0LSSAbDLmaNY8DFiXL3Q', use_context=True)
 
 dispatcher = updater.dispatcher
 
@@ -74,7 +74,7 @@ bye_handler = MessageHandler(Filters.regex('Bye'), bye)
 dispatcher.add_handler(bye_handler) 
 
 def make(update, context):
-   context.bot.send_message(chat_id=update.effective_chat.id, text='@pollob1563')
+   context.bot.send_message(chat_id=update.effective_chat.id, text='@pollob1563 and special Thanks for Google Code-In 2019(Fedora Project)')
 
 make_handler = MessageHandler(Filters.regex('Who makes you?'), make)
 dispatcher.add_handler(make_handler) 
@@ -90,6 +90,5 @@ def unknown(update, context):
 
 unknown_handler = MessageHandler(Filters.command, unknown)
 dispatcher.add_handler(unknown_handler)
-
 
 
