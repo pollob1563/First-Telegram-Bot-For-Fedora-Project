@@ -29,7 +29,7 @@ pi_handler = CommandHandler('pi', pi)
 dispatcher.add_handler(pi_handler)
 
 def help(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text='Hello!\nYou can control me by sending these commands and questions:\n\n<i>Commands:</i>\n/start - Restart The bot\n/help - If you need help\n/pi - know pi rate\n\n<i>Questions</i>\n\n<b>Hi</b>\n<b>How are you?</b>\n<b>Fine</b>\n<b>Who are you?</b>\n<b>What is bot?</b>\n<b>Who makes you?</b>\n<b>Bye</b>',parse_mode='HTML')
+    context.bot.send_message(chat_id=update.effective_chat.id, text='Hello!\nYou can control me by sending these commands and questions:\n\n<i>Commands:</i>\n/start - Restart The bot\n/help - If you need help\n/pi - know pi rate\n\n<i>Questions:</i>\n\n<b>Hi</b>\n<b>How are you?</b>\n<b>Fine</b>\n<b>Who are you?</b>\n<b>What is bot?</b>\n<b>Who makes you?</b>\n<b>Bye</b>',parse_mode='HTML')
 
 help_handler = CommandHandler('help', help)
 dispatcher.add_handler(help_handler)
