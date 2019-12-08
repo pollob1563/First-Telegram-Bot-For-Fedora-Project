@@ -1,0 +1,16 @@
+You can control the bot by sending these commands and questions:
+
+Commands:
+/start - Restart The bot
+/help - If you need help
+/pi - know pi rate
+
+Questions:
+
+Hi
+How are you?
+Fine
+Who are you?
+What is bot?
+Who makes you?
+Bye
