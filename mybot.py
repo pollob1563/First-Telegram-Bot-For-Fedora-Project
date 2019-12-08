@@ -1,5 +1,6 @@
-#bot commands '/start','/pi'
+#bot commands '/start','/pi','/help'
 #bot questions 'Hi','How are you?','Fine','Who are you?','What is bot?','Who makes you?','Bye'
+
 from telegram.ext import Updater
 updater = Updater(token='994234344:AAGhFXvdPEkSGZB0LSSAbDLmaNY8DFiXL3Q', use_context=True)
 
@@ -11,31 +12,32 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
                      level=logging.INFO)
 
 
+from telegram.ext import CommandHandler
+
+#Command
+
 def start(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
+    context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!. If you need help than, type '/help' at chat box.")
+
+start_handler = CommandHandler('start', start)
+dispatcher.add_handler(start_handler)
 
 def pi(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="pi = 3.1416")
 
-
-from telegram.ext import CommandHandler
-start_handler = CommandHandler('start', start)
-dispatcher.add_handler(start_handler)
-
-from telegram.ext import CommandHandler
 pi_handler = CommandHandler('pi', pi)
 dispatcher.add_handler(pi_handler)
 
+def help(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id, text='Hello!\nYou can control me by sending these commands and questions:\n\n<i>Commands:</i>\n/start - Restart The bot\n/help - If you need help\n/pi - know pi rate\n\n<i>Questions</i>\n\n<b>Hi</b>\n<b>How are you?</b>\n<b>Fine</b>\n<b>Who are you?</b>\n<b>What is bot?</b>\n<b>Who makes you?</b>\n<b>Bye</b>',parse_mode='HTML')
+
+help_handler = CommandHandler('help', help)
+dispatcher.add_handler(help_handler)
 
 
-
-
-
-updater.start_polling()
+#Message
 
 from telegram.ext import MessageHandler, Filters
-
-
 
 def hi(update, context):
    context.bot.send_message(chat_id=update.effective_chat.id, text='Hi There! ')
@@ -90,5 +92,8 @@ def unknown(update, context):
 
 unknown_handler = MessageHandler(Filters.command, unknown)
 dispatcher.add_handler(unknown_handler)
+
+
+updater.start_polling()
 
 
