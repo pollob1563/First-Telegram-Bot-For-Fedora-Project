@@ -3,7 +3,7 @@
 
 
 from telegram.ext import Updater
-updater = Updater(token='994234344:AAEla4qJSv1eD0qdaozbsFraB5CcY0OHu9g', use_context=True)
+updater = Updater(token='994234344:AAGes7bwQFXR1i76tfLaUEM5GZA0UPbzmtc', use_context=True)
 
 dispatcher = updater.dispatcher
 # #####################################          WEB Srcping     ##################################### 
@@ -52,7 +52,7 @@ dispatcher.add_handler(help_handler)
 
 def a(update, context):
     context.bot.send_chat_action(update.message.chat.id, 'typing') 
-    context.bot.send_message(chat_id=update.effective_chat.id, text='<b>COVID-19 Stats: Bangladesh</b>\n\nTotal Cases: ' + str(total_cases[0])+'\n\nTotal Recovered: '+str(total_recovered[0])+'\n\nTotal Deaths: '+str(total_death[0])+'\n\nToday Stats: \n\nNew Cases: '+str(new_cases[0])+'\n\nNew Recovered: '+str(new_recovered[0])+'\n\nNew Deaths: '+str(new_death[0])+'\n\nSource: IEDCR\n\n<b>Developed By NerdsLab</b>\n\n',parse_mode='HTML')
+    context.bot.send_message(chat_id=update.effective_chat.id, text='<b>COVID-19 Stats: Bangladesh</b>\n\nTotal Cases: ' + str(total_cases[0])+'\n\nTotal Recovered: '+str(total_recovered[0])+'\n\nTotal Deaths: '+str(total_death[0])+'\n\n<b>Today Stats: </b>\n\nNew Cases: '+str(new_cases[0])+'\n\nNew Recovered: '+str(new_recovered[0])+'\n\nNew Deaths: '+str(new_death[0])+'\n\nSource: IEDCR\n\n<b>Developed By NerdsLab</b>\n\n',parse_mode='HTML')
 
 a_handler = CommandHandler('covid_19', a)
 dispatcher.add_handler(a_handler)
@@ -112,7 +112,7 @@ dispatcher.add_handler(make_handler)
 
 def covid(update, context):
     context.bot.send_chat_action(update.message.chat.id, 'typing') 
-    context.bot.send_message(chat_id=update.effective_chat.id, text='<b>COVID-19 Stats: Bangladesh</b>\n\nTotal Cases: ' + str(total_cases[0])+'\n\nTotal Recovered: '+str(total_recovered[0])+'\n\nTotal Deaths: '+str(total_death[0])+'\n\nToday Stats: \n\nNew Cases: '+str(new_cases[0])+'\n\nNew Recovered: '+str(new_recovered[0])+'\n\nNew Deaths: '+str(new_death[0])+'\n\nSource: IEDCR\n\n<b>Developed By NerdsLab</b>\n\n',parse_mode='HTML')
+    context.bot.send_message(chat_id=update.effective_chat.id, text='<b>COVID-19 Stats: Bangladesh</b>\n\nTotal Cases: ' + str(total_cases[0])+'\n\nTotal Recovered: '+str(total_recovered[0])+'\n\nTotal Deaths: '+str(total_death[0])+'\n\n<b>Today Stats: </b>\n\nNew Cases: '+str(new_cases[0])+'\n\nNew Recovered: '+str(new_recovered[0])+'\n\nNew Deaths: '+str(new_death[0])+'\n\nSource: IEDCR\n\n<b>Developed By NerdsLab</b>\n\n',parse_mode='HTML')
 
 covid_handler = MessageHandler(Filters.regex(r"(?i)covid-19"), covid)
 dispatcher.add_handler(covid_handler)
